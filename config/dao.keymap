@@ -137,6 +137,16 @@
             bindings = <&kp K_UNDO>;
             key-positions = <24 25>;
         };
+
+        combo_alt-tab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <29 28>;
+        };
+
+        combo_show_open_apps {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <7 8 9 10>;
+        };
     };
 
     macros {
