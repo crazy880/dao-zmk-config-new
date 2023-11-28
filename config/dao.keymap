@@ -98,6 +98,20 @@
         };
     };
 
+    macros {
+        macro_pswd: macro_pswd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp R &kp F &kp V &kp E &kp D &kp C &kp LS(A) &kp KP_N9>,
+                <&macro_tap>;
+
+            label = "MACRO_PSWD";
+            wait-ms = <40>;
+            tap-ms = <40>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
