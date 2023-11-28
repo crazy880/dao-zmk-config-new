@@ -119,22 +119,22 @@
         };
 
         combo_cut {
-            bindings = <&kp K_CUT>;
+            bindings = <&kp LC(X)>;
             key-positions = <26 25>;
         };
 
         combo_copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp LC(C)>;
             key-positions = <27 26>;
         };
 
         combo_paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp LC(P)>;
             key-positions = <28 27>;
         };
 
         combo_CTRL_Z {
-            bindings = <&kp K_UNDO>;
+            bindings = <&kp LC(Z)>;
             key-positions = <24 25>;
         };
 
@@ -177,10 +177,10 @@
 
         lower_layer {
             bindings = <
-&mt LGUI F1  &kp F2        &kp F3        &kp F4        &kp F5     &kp F6      &kp F7     &kp F8    &kp F9        &kp F10         &kp F11          &kp F12
-&kp GRAVE    &kp EXCL      &kp AT        &kp HASH      &kp DLLR   &kp PRCNT   &kp CARET  &kp AMPS  &kp STAR      &kp LPAR        &kp RPAR         &kp BACKSLASH
-&tog 1       &kp C_VOL_DN  &kp C_VOL_UP  &kp PG_UP     &kp PG_DN  &kp HOME    &kp END    &kp LEFT  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp C_MUTE
-                                         &lt ADJ BSPC  &trans     &lt 3 BSPC  &lt 3 DEL  &trans    &lt ADJ DEL
+&mt LGUI F1  &kp F2        &kp F3        &kp F4        &kp F5     &kp F6       &kp F7     &kp F8          &kp F9        &kp F10         &kp F11          &kp F12
+&kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &kp PG_UP     &kp PG_DN  &kp HOME     &kp END    &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp BACKSLASH
+&tog 1       &kp EXCL      &kp AT        &kp POUND     &kp DLLR   &kp PERCENT  &kp CARET  &kp AMPS        &kp STAR      &kp LPAR        &kp RPAR         &kp GRAVE
+                                         &lt ADJ BSPC  &trans     &lt 3 BSPC   &lt 3 DEL  &trans          &lt ADJ DEL
             >;
         };
 
