@@ -64,33 +64,83 @@
         };
 
         combo_leftarrow {
-            bindings = <&kp LEFT_ARROW>;
-            key-positions = <15 16 14>;
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <15 16>;
         };
 
         combo_rightarrow {
-            bindings = <&kp RIGHT_ARROW>;
-            key-positions = <19 20 21>;
+            bindings = <&kp LC(RIGHT_ARROW)>;
+            key-positions = <19 20>;
         };
 
         combo_uparrow {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <4 3 2>;
+            bindings = <&kp LC(UP_ARROW)>;
+            key-positions = <4 3>;
         };
 
         combo_downarrow {
-            bindings = <&kp DOWN_ARROW>;
-            key-positions = <26 27 28>;
+            bindings = <&kp LC(DOWN_ARROW)>;
+            key-positions = <27 28>;
         };
 
         combo_CTRL_ALT_DEL {
             bindings = <&kp LC(LA(DELETE))>;
-            key-positions = <13 14 15 16>;
+            key-positions = <25 26 27 28>;
         };
 
         combo_lock_kbd {
             bindings = <&kp LG(L)>;
+            key-positions = <31 32 33 34>;
+        };
+
+        combo_word_BSPC {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <16 15 14>;
+        };
+
+        combo_word_DEL {
+            bindings = <&kp LC(DELETE)>;
+            key-positions = <19 20 21>;
+        };
+
+        combo_word_select_left {
+            bindings = <&kp LC(LS(LEFT))>;
+            key-positions = <13 14 15 16>;
+        };
+
+        combo_word_select_right {
+            bindings = <&kp LS(LC(RIGHT))>;
             key-positions = <19 20 21 22>;
+        };
+
+        combo_right_click_word {
+            bindings = <&kp LS(F10)>;
+            key-positions = <16 17>;
+        };
+
+        combo_cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <26 25>;
+        };
+
+        combo_copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <27 26>;
+        };
+
+        combo_paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <28 27>;
+        };
+
+        combo_CTRL_Z {
+            bindings = <&kp K_UNDO>;
+            key-positions = <24 25>;
+        };
+
+        combo_ALT-TAB {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <29 28>;
         };
     };
 
