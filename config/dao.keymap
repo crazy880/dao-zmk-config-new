@@ -80,7 +80,7 @@
 
         combo_downarrow {
             bindings = <&kp LC(DOWN_ARROW)>;
-            key-positions = <27 28>;
+            key-positions = <31 32>;
         };
 
         combo_CTRL_ALT_DEL {
@@ -136,11 +136,6 @@
         combo_CTRL_Z {
             bindings = <&kp K_UNDO>;
             key-positions = <24 25>;
-        };
-
-        combo_ALT-TAB {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <29 28>;
         };
     };
 
