@@ -63,7 +63,7 @@
             timeout-ms = <25>;
         };
 
-        combo_LALT {
+        combo_RALT {
             bindings = <&kp RALT>;
             key-positions = <31 32>;
             timeout-ms = <25>;
