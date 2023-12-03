@@ -152,6 +152,16 @@
             bindings = <&kp LC(X)>;
             key-positions = <26 28>;
         };
+
+        combo_LSHFT {
+            bindings = <&kp LSHFT>;
+            key-positions = <15 14>;
+        };
+
+        combo_RSHFT {
+            bindings = <&kp RSHFT>;
+            key-positions = <20 21>;
+        };
     };
 
     macros {
