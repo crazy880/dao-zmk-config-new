@@ -118,14 +118,9 @@
             key-positions = <16 17>;
         };
 
-        combo_cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <26 25>;
-        };
-
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <27 26>;
+            key-positions = <25 26>;
         };
 
         combo_paste {
@@ -146,6 +141,16 @@
         combo_show_open_apps {
             bindings = <&kp LG(TAB)>;
             key-positions = <7 8 9 10>;
+        };
+
+        combo_pswd {
+            bindings = <&macro_pswd>;
+            key-positions = <1 2 3 4>;
+        };
+
+        macro_copy {
+            bindings = <&kp LC(X)>;
+            key-positions = <26 28>;
         };
     };
 
