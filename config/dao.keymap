@@ -44,22 +44,22 @@
         };
 
         combo_LCTRL {
-            bindings = <&kp LCTRL>;
+            bindings = <&sk LCTRL>;
             key-positions = <25 26>;
         };
 
         combo_LALT {
-            bindings = <&kp LALT>;
+            bindings = <&sk LALT>;
             key-positions = <27 26>;
         };
 
         combo_RCTRL {
-            bindings = <&kp RCTRL>;
+            bindings = <&sk RCTRL>;
             key-positions = <34 33>;
         };
 
         combo_RALT {
-            bindings = <&kp RALT>;
+            bindings = <&sk RALT>;
             key-positions = <33 32>;
         };
 
@@ -154,12 +154,12 @@
         };
 
         combo_LSHFT {
-            bindings = <&kp LSHFT>;
+            bindings = <&sk LSHFT>;
             key-positions = <15 14>;
         };
 
         combo_RSHFT {
-            bindings = <&kp RSHFT>;
+            bindings = <&sk RSHFT>;
             key-positions = <20 21>;
         };
     };
