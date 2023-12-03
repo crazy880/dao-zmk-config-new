@@ -162,6 +162,21 @@
             bindings = <&sk RSHFT>;
             key-positions = <20 21>;
         };
+
+        combo_tog_L1 {
+            bindings = <&tog 1>;
+            key-positions = <25 28>;
+        };
+
+        combo_tog_L2 {
+            bindings = <&tog 2>;
+            key-positions = <13 16>;
+        };
+
+        combo_tog_L3 {
+            bindings = <&tog 3>;
+            key-positions = <1 4>;
+        };
     };
 
     macros {
