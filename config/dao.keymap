@@ -165,17 +165,17 @@
 
         combo_tog_L1 {
             bindings = <&tog 1>;
-            key-positions = <25 28>;
+            key-positions = <31 34>;
         };
 
         combo_tog_L2 {
             bindings = <&tog 2>;
-            key-positions = <13 16>;
+            key-positions = <19 22>;
         };
 
         combo_tog_L3 {
             bindings = <&tog 3>;
-            key-positions = <1 4>;
+            key-positions = <7 10>;
         };
     };
 
