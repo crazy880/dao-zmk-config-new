@@ -155,12 +155,12 @@
 
         combo_LSHFT {
             bindings = <&sk LSHFT>;
-            key-positions = <15 14>;
+            key-positions = <13 14>;
         };
 
         combo_RSHFT {
             bindings = <&sk RSHFT>;
-            key-positions = <20 21>;
+            key-positions = <21 22>;
         };
 
         combo_tog_L1 {
