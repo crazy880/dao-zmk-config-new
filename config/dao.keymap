@@ -383,6 +383,13 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp PLUS>, <&kp KP_EQUAL>;
         };
+
+        sem_L4: sem_L4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SEM_L4";
+            #binding-cells = <0>;
+            bindings = <&lt 4 SEMI>, <&tog 4>;
+        };
     };
 
     keymap {
@@ -424,7 +431,7 @@
             >;
         };
 
-        layer_4 {
+        layout_3l {
             bindings = <
 &kp ESC    &kp Q      &kp F   &kp U               &kp Y             &kp Z           &kp X            &kp K             &kp C               &kp W   &kp B     &kp BACKSLASH
 &kp TAB    &o3_L4     &h3_L3  &e3_L2              &a3_L1            &i3_L0          &d3_L0           &r3_L1            &t3_L2              &n3_L3  &s3_L4    &kp APOS
