@@ -235,6 +235,8 @@
             label = "TD_F_L1";
             #binding-cells = <0>;
             bindings = <&lt 1 F>, <&tog 1>;
+
+            tapping-term-ms = <400>;
         };
 
         td_D_L2: td_D_L2 {
@@ -242,6 +244,8 @@
             label = "TD_D_L2";
             #binding-cells = <0>;
             bindings = <&lt 2 D>, <&tog 2>;
+
+            tapping-term-ms = <400>;
         };
 
         td_G_L0: td_G_L0 {
@@ -249,6 +253,8 @@
             label = "TD_G_L0";
             #binding-cells = <0>;
             bindings = <&lt 0 G>, <&tog 0>;
+
+            tapping-term-ms = <400>;
         };
 
         td_S_L3: td_S_L3 {
@@ -256,6 +262,8 @@
             label = "TD_S_L3";
             #binding-cells = <0>;
             bindings = <&lt 3 S>, <&tog 3>;
+
+            tapping-term-ms = <400>;
         };
 
         td_A_L4: td_A_L4 {
@@ -263,6 +271,8 @@
             label = "TD_A_L4";
             #binding-cells = <0>;
             bindings = <&lt 4 A>, <&tog 4>;
+
+            tapping-term-ms = <400>;
         };
 
         H_L0: H_L0 {
