@@ -230,37 +230,37 @@
             bindings = <&lt 1 BSPC>, <&tog 1>;
         };
 
-        F_L1: F_L1 {
+        td_F_L1: td_F_L1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "F_L1";
+            label = "TD_F_L1";
             #binding-cells = <0>;
             bindings = <&lt 1 F>, <&tog 1>;
         };
 
-        D_L2: D_L2 {
+        td_D_L2: td_D_L2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "D_L2";
+            label = "TD_D_L2";
             #binding-cells = <0>;
             bindings = <&lt 2 D>, <&tog 2>;
         };
 
-        G_L0: G_L0 {
+        td_G_L0: td_G_L0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "G_L0";
+            label = "TD_G_L0";
             #binding-cells = <0>;
             bindings = <&lt 0 G>, <&tog 0>;
         };
 
-        S_L3: S_L3 {
+        td_S_L3: td_S_L3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "S_L3";
+            label = "TD_S_L3";
             #binding-cells = <0>;
             bindings = <&lt 3 S>, <&tog 3>;
         };
 
-        A_L4: A_L4 {
+        td_A_L4: td_A_L4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "A_L4";
+            label = "TD_A_L4";
             #binding-cells = <0>;
             bindings = <&lt 4 A>, <&tog 4>;
         };
@@ -397,10 +397,10 @@
 
         default_layer {
             bindings = <
-&kp ESCAPE     &kp Q  &kp W  &kp E           &kp R             &kp T           &kp Y            &kp U             &kp I          &kp O    &kp P     &kp BSLH
-&kp LSHFT      &A_L4  &S_L3  &D_L2           &F_L1             &G_L0           &H_L0            &J_L1             &K_L2          &L_L3    &kp SEMI  &mt RSHFT SQT
-&mt LSHFT TAB  &kp Z  &kp X  &kp C           &kp V             &kp B           &kp N            &kp M             &kp COMMA      &kp DOT  &kp FSLH  &kp RET
-                             &mt LALT SPACE  &mt LCTRL DELETE  &mt LSHFT BSPC  &mt RSHFT SPACE  &mt RCTRL DELETE  &mt RALT BSPC
+&kp ESCAPE     &kp Q     &kp W     &kp E           &kp R             &kp T           &kp Y            &kp U             &kp I          &kp O    &kp P     &kp BSLH
+&kp LSHFT      &td_A_L4  &td_S_L3  &td_D_L2        &td_F_L1          &td_G_L0        &H_L0            &J_L1             &K_L2          &L_L3    &kp SEMI  &mt RSHFT SQT
+&mt LSHFT TAB  &kp Z     &kp X     &kp C           &kp V             &kp B           &kp N            &kp M             &kp COMMA      &kp DOT  &kp FSLH  &kp RET
+                                   &mt LALT SPACE  &mt LCTRL DELETE  &mt LSHFT BSPC  &mt RSHFT SPACE  &mt RCTRL DELETE  &mt RALT BSPC
             >;
         };
 
