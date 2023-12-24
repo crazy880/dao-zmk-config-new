@@ -412,9 +412,9 @@
 
         default_layer {
             bindings = <
-&tog 4  &kp Q  &kp W  &kp E        &kp R         &kp T       &kp Y            &kp U             &kp I          &kp O    &kp P     &kp BSLH
-&tog 2  &kp A  &kp S  &kp D        &kp F         &kp G       &kp H            &kp J             &kp K          &kp L    &kp SEMI  &mt RSHFT SQT
-&tog 1  &kp Z  &kp X  &kp C        &kp V         &kp B       &kp N            &kp M             &kp COMMA      &kp DOT  &kp FSLH  &kp RET
+&tog 4  &kp Q  &kp W  &kp E        &kp R         &kp T       &kp Y            &kp U             &kp I          &kp O    &kp P      &kp BSLH
+&tog 2  &kp A  &kp S  &kp D        &kp F         &kp G       &kp H            &kp J             &kp K          &kp L    &kp SEMI   &kp APOS
+&tog 1  &kp Z  &kp X  &kp C        &kp V         &kp B       &kp N            &kp M             &kp COMMA      &kp DOT  &kp ENTER  &kp SLASH
                       &lt 3 SPACE  &lt 1 DELETE  &lt 2 BSPC  &mt RSHFT SPACE  &mt RCTRL DELETE  &mt RALT BSPC
             >;
         };
@@ -448,10 +448,10 @@
 
         layout_3l {
             bindings = <
-&tog 4  &kp Q      &kp F   &kp U               &kp Y             &kp Z           &kp X            &kp K             &kp C               &kp W   &kp B     &kp BACKSLASH
-&tog 4  &o3_L4     &h3_L3  &e3_L2              &a3_L1            &i3_L0          &d3_L0           &r3_L1            &t3_L2              &n3_L3  &s3_L4    &kp APOS
-&tog 4  &kp COMMA  &kp M   &kp DOT             &kp J             &kp SEMI        &kp G            &kp L             &kp P               &kp V   &kp FSLH  &kp ENTER
-                           &mt LEFT_ALT SPACE  &mt LCTRL DELETE  &mt LSHFT BSPC  &mt RSHFT SPACE  &mt RCTRL DELETE  &mt RALT BACKSPACE
+&tog 4  &kp Q      &kp F  &kp U               &kp Y             &kp Z           &kp X            &kp K             &kp C               &kp W  &kp B      &kp BACKSLASH
+&tog 4  &kp O      &kp H  &kp E               &kp A             &kp I           &kp D            &kp R             &kp T               &kp N  &kp S      &kp APOS
+&tog 4  &kp COMMA  &kp M  &kp DOT             &kp J             &kp SEMI        &kp G            &kp L             &kp P               &kp V  &kp ENTER  &kp SLASH
+                          &mt LEFT_ALT SPACE  &mt LCTRL DELETE  &mt LSHFT BSPC  &mt RSHFT SPACE  &mt RCTRL DELETE  &mt RALT BACKSPACE
             >;
         };
     };
