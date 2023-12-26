@@ -412,13 +412,22 @@
             bindings = <&lt 4 SEMI>, <&tog 4>;
         };
 
-        bspc_del: bspc_del {
+        bs_del_L2: bs_del_L2 {
             compatible = "zmk,behavior-mod-morph";
-            label = "BSPC_DEL";
+            label = "BS_DEL_L2";
             bindings = <&lt 2 BSPC>, <&kp DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
+
+        sp_del_L2: sp_del_L2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SP_DEL_L2";
+            bindings = <&lt 2 SPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
     };
 
@@ -427,46 +436,46 @@
 
         default_layer {
             bindings = <
-&tog 4  &kp Q  &kp W  &kp E        &kp R         &kp T      &kp Y        &kp U         &kp I          &kp O    &kp P      &kp BSLH
-&tog 2  &kp A  &kp S  &kp D        &kp F         &kp G      &kp H        &kp J         &kp K          &kp L    &kp SEMI   &kp APOS
-&tog 1  &kp Z  &kp X  &kp C        &kp V         &kp B      &kp N        &kp M         &kp COMMA      &kp DOT  &kp SLASH  &kp RET
-                      &lt 3 SPACE  &lt 1 DELETE  &bspc_del  &lt 2 SPACE  &lt 1 DELETE  &mt RALT BSPC
+&tog 4  &kp Q  &kp W  &kp E        &kp R         &kp T       &kp Y       &kp U         &kp I          &kp O    &kp P      &kp BSLH
+&tog 2  &kp A  &kp S  &kp D        &kp F         &kp G       &kp H       &kp J         &kp K          &kp L    &kp SEMI   &kp APOS
+&tog 1  &kp Z  &kp X  &kp C        &kp V         &kp B       &kp N       &kp M         &kp COMMA      &kp DOT  &kp SLASH  &kp RET
+                      &lt 3 SPACE  &lt 1 DELETE  &bs_del_L2  &sp_del_L2  &lt 1 DELETE  &mt RALT BSPC
             >;
         };
 
         arrow_layer {
             bindings = <
 &mt F7 F1  &mt F8 F2   &mt F13 F3    &mt F10 F4    &mt F11 F5   &mt F12 F6     &kp PAGE_UP  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PAGE_DOWN
-&none      &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME     &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp END
+&tog 1     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME     &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp END
 &kp GRAVE  &kp EXCL    &kp AT        &kp POUND     &kp DLLR     &kp PERCENT    &kp CARET    &kp AMPS        &kp STAR         &parL_lesL        &parR_grR          &min_pl_eq
-                                     &trans        &trans       &trans         &tog 1       &tog 0          &none
+                                     &trans        &trans       &trans         &tog 1       &trans          &trans
             >;
         };
 
         number_layer {
             bindings = <
-&kp KP_SLASH  &kp KP_SLASH  &kp KP_N9  &kp KP_N8  &kp KP_N7        &kp KP_EQUAL  &kp KP_EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_SLASH  &kp KP_SLASH
-&none         &kp KP_DOT    &kp KP_N6  &kp KP_N5  &kp KP_N4        &kp KP_MINUS  &kp KP_MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD    &kp KP_MULTIPLY
-&none         &kp KP_N0     &kp KP_N3  &kp KP_N2  &kp KP_NUMBER_1  &kp KP_PLUS   &kp KP_PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0        &kp RET
-                                       &none      &none            &trans        &tog 2        &tog 0        &trans
+&kp KP_SLASH  &kp KP_SLASH  &kp NUMBER_9  &kp N8        &kp N7        &kp KP_EQUAL  &kp KP_EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_SLASH  &kp KP_SLASH
+&tog 2        &kp DOT       &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &kp KP_MINUS  &kp KP_MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD    &kp KP_MULTIPLY
+&none         &kp N0        &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp KP_PLUS   &kp KP_PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0        &kp RET
+                                          &trans        &trans        &trans        &tog 2        &trans        &trans
             >;
         };
 
         adjust_layer {
             bindings = <
 &bootloader  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &bootloader
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+&tog 3       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
 &none        &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
-                                         &trans        &none         &trans        &tog 3        &tog 0        &trans
+                                         &trans        &none         &trans        &tog 3        &trans        &trans
             >;
         };
 
         layout_3l {
             bindings = <
-&none   &kp Q      &kp F  &kp U               &kp Y             &kp Z           &kp X        &kp K         &kp C               &kp W  &kp B      &kp BACKSLASH
-&none   &kp O      &kp H  &kp E               &kp A             &kp I           &kp D        &kp R         &kp T               &kp N  &kp S      &kp APOS
-&tog 4  &kp COMMA  &kp M  &kp DOT             &kp J             &kp SEMI        &kp G        &kp L         &kp P               &kp V  &kp SLASH  &kp RET
-                          &mt LEFT_ALT SPACE  &mt LCTRL DELETE  &mt LSHFT BSPC  &lt 2 SPACE  &lt 1 DELETE  &mt RALT BACKSPACE
+&none   &kp Q      &kp F  &kp U               &kp Y         &kp Z       &kp X       &kp K         &kp C               &kp W  &kp B      &kp BACKSLASH
+&none   &kp O      &kp H  &kp E               &kp A         &kp I       &kp D       &kp R         &kp T               &kp N  &kp S      &kp APOS
+&tog 4  &kp COMMA  &kp M  &kp DOT             &kp J         &kp SEMI    &kp G       &kp L         &kp P               &kp V  &kp SLASH  &kp RET
+                          &mt LEFT_ALT SPACE  &lt 1 DELETE  &bs_del_L2  &sp_del_L2  &lt 1 DELETE  &mt RALT BACKSPACE
             >;
         };
     };
