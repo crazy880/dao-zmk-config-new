@@ -45,7 +45,7 @@
 
         combo_LCTRL {
             bindings = <&sk LCTRL>;
-            key-positions = <25 26>;
+            key-positions = <2 3>;
         };
 
         combo_LALT {
@@ -55,7 +55,7 @@
 
         combo_RCTRL {
             bindings = <&sk RCTRL>;
-            key-positions = <34 33>;
+            key-positions = <8 9>;
         };
 
         combo_RALT {
@@ -63,23 +63,23 @@
             key-positions = <33 32>;
         };
 
-        combo_leftarrow {
-            bindings = <&kp LC(LEFT_ARROW)>;
+        combo_leftjumpword {
+            bindings = <&LW_LL>;
             key-positions = <15 16>;
         };
 
-        combo_rightarrow {
-            bindings = <&kp LC(RIGHT_ARROW)>;
+        combo_rightjumpword {
+            bindings = <&RW_RL>;
             key-positions = <19 20>;
         };
 
         combo_uparrow {
-            bindings = <&kp LC(UP_ARROW)>;
+            bindings = <&kp UP_ARROW>;
             key-positions = <7 8>;
         };
 
         combo_downarrow {
-            bindings = <&kp LC(DOWN_ARROW)>;
+            bindings = <&kp DOWN_ARROW>;
             key-positions = <31 32>;
         };
 
@@ -120,22 +120,17 @@
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <26 28>;
+            key-positions = <15 20>;
         };
 
         combo_paste {
             bindings = <&kp LC(P)>;
-            key-positions = <28 27>;
+            key-positions = <16 19>;
         };
 
         combo_CTRL_Z {
             bindings = <&kp LC(Z)>;
             key-positions = <24 25>;
-        };
-
-        combo_alt-tab {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <29 28>;
         };
 
         combo_show_open_apps {
@@ -150,17 +145,17 @@
 
         combo_cut {
             bindings = <&kp LC(X)>;
-            key-positions = <27 25>;
+            key-positions = <14 21>;
         };
 
         combo_LSHFT {
             bindings = <&sk LSHFT>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
         };
 
         combo_RSHFT {
             bindings = <&sk RSHFT>;
-            key-positions = <21 22>;
+            key-positions = <21 20>;
         };
 
         combo_tog_L1 {
@@ -176,6 +171,16 @@
         combo_tog_L3 {
             bindings = <&tog 3>;
             key-positions = <7 10>;
+        };
+
+        combo_tog_L0 {
+            bindings = <&tog 0>;
+            key-positions = <38 39>;
+        };
+
+        combo_tog_L4 {
+            bindings = <&tog 4>;
+            key-positions = <37 40>;
         };
     };
 
@@ -429,6 +434,60 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
+
+        LW_LL: LW_LL {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LW_LL";
+            bindings = <&kp LC(LEFT)>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RALT)>;
+        };
+
+        RW_RL: RW_RL {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RW_RL";
+            bindings = <&kp RC(RIGHT)>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_RALT|MOD_LALT|MOD_LSFT)>;
+        };
+
+        sp_del_shft: sp_del_shft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SP_DEL_SHFT";
+            bindings = <&mt RSHFT SPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
+
+        bs_del_shft: bs_del_shft {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BS_DEL_SHFT";
+            bindings = <&mt LSHFT BSPC>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
+
+        bs_del_L1: bs_del_L1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BS_DEL_L1";
+            bindings = <&lt 1 BSPC>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
+
+        sp_del_L1: sp_del_L1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SP_DEL_L1";
+            bindings = <&lt 1 BSPC>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
     };
 
     keymap {
@@ -436,19 +495,19 @@
 
         default_layer {
             bindings = <
-&tog 4  &kp Q  &kp W  &kp E        &kp R         &kp T       &kp Y       &kp U         &kp I          &kp O    &kp P      &kp BSLH
-&tog 2  &kp A  &kp S  &kp D        &kp F         &kp G       &kp H       &kp J         &kp K          &kp L    &kp SEMI   &kp APOS
-&tog 1  &kp Z  &kp X  &kp C        &kp V         &kp B       &kp N       &kp M         &kp COMMA      &kp DOT  &kp SLASH  &kp RET
-                      &lt 3 SPACE  &lt 1 DELETE  &bs_del_L2  &sp_del_L2  &lt 1 DELETE  &mt RALT BSPC
+&tog 4  &kp Q  &kp W  &kp E       &kp R       &kp T         &kp Y         &kp U       &kp I       &kp O    &kp P      &kp BSLH
+&tog 2  &kp A  &kp S  &kp D       &kp F       &kp G         &kp H         &kp J       &kp K       &kp L    &kp SEMI   &kp APOS
+&tog 1  &kp Z  &kp X  &kp C       &kp V       &kp B         &kp N         &kp M       &kp COMMA   &kp DOT  &kp SLASH  &kp RET
+                      &bs_del_L1  &bs_del_L2  &bs_del_shft  &sp_del_shft  &bs_del_L2  &sp_del_L1
             >;
         };
 
         arrow_layer {
             bindings = <
-&mt F7 F1  &mt F8 F2   &mt F13 F3    &mt F10 F4    &mt F11 F5   &mt F12 F6     &kp PAGE_UP  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PAGE_DOWN
-&tog 1     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME     &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp END
-&kp GRAVE  &kp EXCL    &kp AT        &kp POUND     &kp DLLR     &kp PERCENT    &kp CARET    &kp AMPS        &kp STAR         &parL_lesL        &parR_grR          &min_pl_eq
-                                     &trans        &trans       &trans         &tog 1       &trans          &trans
+&mt F7 F1  &mt F8 F2   &mt F9 F3     &mt F10 F4    &mt F11 F5            &mt F12 F6            &kp PAGE_UP  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PAGE_DOWN
+&tog 1     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp HOME     &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp END
+&kp GRAVE  &kp EXCL    &kp AT        &kp POUND     &kp DLLR              &kp PERCENT           &kp CARET    &kp AMPS        &kp STAR         &parL_lesL        &parR_grR          &min_pl_eq
+                                     &trans        &trans                &trans                &tog 1       &trans          &trans
             >;
         };
 
@@ -472,10 +531,10 @@
 
         layout_3l {
             bindings = <
-&none   &kp Q      &kp F  &kp U               &kp Y         &kp Z       &kp X       &kp K         &kp C               &kp W  &kp B      &kp BACKSLASH
-&none   &kp O      &kp H  &kp E               &kp A         &kp I       &kp D       &kp R         &kp T               &kp N  &kp S      &kp APOS
-&tog 4  &kp COMMA  &kp M  &kp DOT             &kp J         &kp SEMI    &kp G       &kp L         &kp P               &kp V  &kp SLASH  &kp RET
-                          &mt LEFT_ALT SPACE  &lt 1 DELETE  &bs_del_L2  &sp_del_L2  &lt 1 DELETE  &mt RALT BACKSPACE
+&none   &kp Q      &kp F  &kp U       &kp Y       &kp Z         &kp X         &kp K       &kp C       &kp W  &kp B      &kp BACKSLASH
+&tog 4  &kp O      &kp H  &kp E       &kp A       &kp I         &kp D         &kp R       &kp T       &kp N  &kp S      &kp APOS
+&none   &kp COMMA  &kp M  &kp DOT     &kp J       &kp SEMI      &kp G         &kp L       &kp P       &kp V  &kp SLASH  &kp RET
+                          &bs_del_L1  &bs_del_L2  &bs_del_shft  &sp_del_shft  &sp_del_L2  &sp_del_L1
             >;
         };
     };
