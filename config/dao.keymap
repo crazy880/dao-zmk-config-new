@@ -494,10 +494,10 @@
         qr_stickykey: qr_stickykey {
             compatible = "zmk,behavior-sticky-key";
             label = "QR_STICKYKEY";
-            bindings = <&none>;
+            bindings = <&sk>;
             #binding-cells = <1>;
             quick-release;
-            release-after-ms = <100>;
+            release-after-ms = <200>;
         };
     };
 
