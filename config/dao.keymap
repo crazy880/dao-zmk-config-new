@@ -76,11 +76,13 @@
         combo_uparrow {
             bindings = <&kp UP_ARROW>;
             key-positions = <7 8>;
+            timeout-ms = <50>;
         };
 
         combo_downarrow {
             bindings = <&kp DOWN_ARROW>;
             key-positions = <31 32>;
+            timeout-ms = <50>;
         };
 
         combo_CTRL_ALT_DEL {
@@ -149,12 +151,12 @@
         };
 
         combo_LSHFT {
-            bindings = <&sk LSHFT>;
+            bindings = <&qr_stickykey 0>;
             key-positions = <14 15>;
         };
 
         combo_RSHFT {
-            bindings = <&sk RSHFT>;
+            bindings = <&qr_stickykey 0>;
             key-positions = <21 20>;
         };
 
@@ -488,6 +490,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT|MOD_LALT|MOD_LCTL|MOD_RCTL|MOD_RALT)>;
         };
+
+        qr_stickykey: qr_stickykey {
+            compatible = "zmk,behavior-sticky-key";
+            label = "QR_STICKYKEY";
+            bindings = <&none>;
+            #binding-cells = <1>;
+            quick-release;
+            release-after-ms = <100>;
+        };
     };
 
     keymap {
@@ -495,10 +506,10 @@
 
         default_layer {
             bindings = <
-&tog 4  &kp Q  &kp W  &kp E       &kp R       &kp T         &kp Y         &kp U       &kp I       &kp O    &kp P      &kp BSLH
-&tog 2  &kp A  &kp S  &kp D       &kp F       &kp G         &kp H         &kp J       &kp K       &kp L    &kp SEMI   &kp APOS
-&tog 1  &kp Z  &kp X  &kp C       &kp V       &kp B         &kp N         &kp M       &kp COMMA   &kp DOT  &kp SLASH  &kp RET
-                      &bs_del_L1  &bs_del_L2  &bs_del_shft  &sp_del_shft  &bs_del_L2  &sp_del_L1
+&tog 4  &kp Q  &kp W  &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O    &kp P      &kp BSLH
+&tog 2  &kp A  &kp S  &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L    &kp SEMI   &kp APOS
+&tog 1  &kp Z  &kp X  &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT  &kp SLASH  &kp RET
+                      &bs_del_L1  &bs_del_L2  &bs_del_L2  &sp_del_L2  &bs_del_L2  &sp_del_L1
             >;
         };
 
