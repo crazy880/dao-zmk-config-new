@@ -75,13 +75,13 @@
 
         combo_uparrow {
             bindings = <&kp UP_ARROW>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
             timeout-ms = <50>;
         };
 
         combo_downarrow {
             bindings = <&kp DOWN_ARROW>;
-            key-positions = <31 32>;
+            key-positions = <31 30>;
             timeout-ms = <50>;
         };
 
@@ -117,7 +117,7 @@
 
         combo_right_click_word {
             bindings = <&kp LS(F10)>;
-            key-positions = <19 18>;
+            key-positions = <21 22>;
         };
 
         combo_copy {
@@ -183,6 +183,16 @@
         combo_tog_L4 {
             bindings = <&tog 4>;
             key-positions = <37 40>;
+        };
+
+        left_arrow {
+            bindings = <&kp LEFT>;
+            key-positions = <18 19>;
+        };
+
+        right_arrow {
+            bindings = <&kp RIGHT>;
+            key-positions = <16 17>;
         };
     };
 
