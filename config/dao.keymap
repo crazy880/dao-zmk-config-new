@@ -151,12 +151,12 @@
         };
 
         combo_LSHFT {
-            bindings = <&qr_stickykey 0>;
+            bindings = <&qr_stickykey LEFT_SHIFT>;
             key-positions = <14 15>;
         };
 
         combo_RSHFT {
-            bindings = <&qr_stickykey 0>;
+            bindings = <&qr_stickykey RIGHT_SHIFT>;
             key-positions = <21 20>;
         };
 
