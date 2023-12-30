@@ -77,12 +77,14 @@
             bindings = <&kp UP_ARROW>;
             key-positions = <7 6>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_downarrow {
             bindings = <&kp DOWN_ARROW>;
             key-positions = <31 30>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_CTRL_ALT_DEL {
@@ -133,6 +135,7 @@
         combo_CTRL_Z {
             bindings = <&kp LC(Z)>;
             key-positions = <24 25>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_show_open_apps {
@@ -153,11 +156,13 @@
         combo_LSHFT {
             bindings = <&qr_stickykey LEFT_SHIFT>;
             key-positions = <14 15>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_RSHFT {
             bindings = <&qr_stickykey RIGHT_SHIFT>;
             key-positions = <21 20>;
+            require-prior-idle-ms = <150>;
         };
 
         combo_tog_L1 {
@@ -181,18 +186,20 @@
         };
 
         combo_tog_L4 {
-            bindings = <&tog 4>;
+            bindings = <&tog 3>;
             key-positions = <37 40>;
         };
 
         left_arrow {
             bindings = <&kp LEFT>;
             key-positions = <18 19>;
+            require-prior-idle-ms = <150>;
         };
 
         right_arrow {
             bindings = <&kp RIGHT>;
             key-positions = <16 17>;
+            require-prior-idle-ms = <150>;
         };
     };
 
@@ -229,7 +236,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SP_L3_CTR";
             #binding-cells = <0>;
-            bindings = <&lt 3 SPACE>, <&tog 3>, <&sk LCTRL>;
+            bindings = <&lt 0 SPACE>, <&tog 0>, <&sk LCTRL>;
         };
 
         td_sp_L2: td_sp_L2 {
@@ -277,7 +284,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_S_L3";
             #binding-cells = <0>;
-            bindings = <&lt 3 S>, <&tog 3>;
+            bindings = <&lt 0 S>, <&tog 0>;
 
             tapping-term-ms = <400>;
         };
@@ -286,7 +293,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_A_L4";
             #binding-cells = <0>;
-            bindings = <&lt 4 A>, <&tog 4>;
+            bindings = <&lt 3 A>, <&tog 3>;
 
             tapping-term-ms = <400>;
         };
@@ -322,7 +329,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "L_L3";
             #binding-cells = <0>;
-            bindings = <&lt 3 L>, <&tog 3>;
+            bindings = <&lt 0 L>, <&tog 0>;
         };
 
         i3_L0: i3_L0 {
@@ -350,14 +357,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "H3_L3";
             #binding-cells = <0>;
-            bindings = <&lt 3 H>, <&tog 3>;
+            bindings = <&lt 0 H>, <&tog 0>;
         };
 
         o3_L4: o3_L4 {
             compatible = "zmk,behavior-tap-dance";
             label = "O3_L4";
             #binding-cells = <0>;
-            bindings = <&lt 4 O>, <&tog 4>;
+            bindings = <&lt 3 O>, <&tog 3>;
         };
 
         d3_L0: d3_L0 {
@@ -385,14 +392,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "N3_L3";
             #binding-cells = <0>;
-            bindings = <&lt 3 N>, <&tog 3>;
+            bindings = <&lt 0 N>, <&tog 0>;
         };
 
         s3_L4: s3_L4 {
             compatible = "zmk,behavior-tap-dance";
             label = "S3_L4";
             #binding-cells = <0>;
-            bindings = <&lt 4 S>, <&tog 4>;
+            bindings = <&lt 3 S>, <&tog 3>;
         };
 
         parL_lesL: parL_lesL {
@@ -426,7 +433,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SEM_L4";
             #binding-cells = <0>;
-            bindings = <&lt 4 SEMI>, <&tog 4>;
+            bindings = <&lt 3 SEMI>, <&tog 3>;
         };
 
         bs_del_L2: bs_del_L2 {
@@ -514,16 +521,16 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        qwerty_layout {
             bindings = <
-&tog 4  &kp Q  &kp W  &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O    &kp P      &kp BSLH
+&tog 3  &kp Q  &kp W  &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O    &kp P      &kp BSLH
 &tog 2  &kp A  &kp S  &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L    &kp SEMI   &kp APOS
 &tog 1  &kp Z  &kp X  &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT  &kp SLASH  &kp RET
                       &bs_del_L1  &bs_del_L2  &bs_del_L2  &sp_del_L2  &bs_del_L2  &sp_del_L1
             >;
         };
 
-        arrow_layer {
+        arrows-symbols {
             bindings = <
 &mt F7 F1  &mt F8 F2   &mt F9 F3     &mt F10 F4    &mt F11 F5            &mt F12 F6            &kp PAGE_UP  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PAGE_DOWN
 &tog 1     &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp HOME     &kp LEFT_ARROW  &kp UP_ARROW     &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp END
@@ -532,7 +539,7 @@
             >;
         };
 
-        number_layer {
+        numbers {
             bindings = <
 &kp KP_SLASH  &kp KP_SLASH  &kp NUMBER_9  &kp N8        &kp N7        &kp KP_EQUAL  &kp KP_EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_SLASH  &kp KP_SLASH
 &tog 2        &kp DOT       &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &kp KP_MINUS  &kp KP_MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD    &kp KP_MULTIPLY
@@ -541,21 +548,21 @@
             >;
         };
 
-        adjust_layer {
+        threeL {
             bindings = <
-&bootloader  &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &bootloader
-&tog 3       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-&none        &none         &none         &none         &none         &none         &none         &none         &none         &none         &none         &sys_reset
-                                         &trans        &none         &trans        &tog 3        &trans        &trans
+&none   &kp Q      &kp F  &kp U       &kp Y       &kp Z         &kp X         &kp K       &kp C       &kp W  &kp B      &kp BACKSLASH
+&tog 3  &kp O      &kp H  &kp E       &kp A       &kp I         &kp D         &kp R       &kp T       &kp N  &kp S      &kp APOS
+&none   &kp COMMA  &kp M  &kp DOT     &kp J       &kp SEMI      &kp G         &kp L       &kp P       &kp V  &kp SLASH  &kp RET
+                          &bs_del_L1  &bs_del_L2  &bs_del_shft  &sp_del_shft  &sp_del_L2  &sp_del_L1
             >;
         };
 
-        layout_3l {
+        BT {
             bindings = <
-&none   &kp Q      &kp F  &kp U       &kp Y       &kp Z         &kp X         &kp K       &kp C       &kp W  &kp B      &kp BACKSLASH
-&tog 4  &kp O      &kp H  &kp E       &kp A       &kp I         &kp D         &kp R       &kp T       &kp N  &kp S      &kp APOS
-&none   &kp COMMA  &kp M  &kp DOT     &kp J       &kp SEMI      &kp G         &kp L       &kp P       &kp V  &kp SLASH  &kp RET
-                          &bs_del_L1  &bs_del_L2  &bs_del_shft  &sp_del_shft  &sp_del_L2  &sp_del_L1
+&bootloader  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &bootloader
+&tog 4       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &sys_reset
+                                         &trans        &trans        &trans        &tog 4  &trans  &trans
             >;
         };
     };
