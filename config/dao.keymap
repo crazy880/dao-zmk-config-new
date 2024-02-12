@@ -41,22 +41,22 @@
 
         combo_LCTRL {
             bindings = <&sk LCTRL>;
-            key-positions = <2 3>;
+            key-positions = <5 17>;
         };
 
         combo_LALT {
             bindings = <&sk LALT>;
-            key-positions = <27 26>;
+            key-positions = <5 17>;
         };
 
         combo_RCTRL {
             bindings = <&sk RCTRL>;
-            key-positions = <>;
+            key-positions = <18 6>;
         };
 
         combo_RALT {
             bindings = <&sk RALT>;
-            key-positions = <>;
+            key-positions = <18 30>;
         };
 
         combo_leftjumpword {
@@ -151,7 +151,7 @@
 
         combo_LSHFT {
             bindings = <&qr_stickykey LEFT_SHIFT>;
-            key-positions = <>;
+            key-positions = <14 15>;
             require-prior-idle-ms = <150>;
         };
 
