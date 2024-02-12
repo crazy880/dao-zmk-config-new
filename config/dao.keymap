@@ -51,12 +51,12 @@
 
         combo_RCTRL {
             bindings = <&sk RCTRL>;
-            key-positions = <8 9>;
+            key-positions = <>;
         };
 
         combo_RALT {
             bindings = <&sk RALT>;
-            key-positions = <33 32>;
+            key-positions = <>;
         };
 
         combo_leftjumpword {
@@ -139,8 +139,8 @@
             key-positions = <1 2 3 4>;
         };
 
-        combo_pswd {
-            bindings = <&macro_pswd>;
+        combo_p {
+            bindings = <&macro_p>;
             key-positions = <7 8 9 10>;
         };
 
@@ -200,7 +200,7 @@
     };
 
     macros {
-        macro_pswd: macro_pswd {
+        macro_p: macro_pswd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -404,7 +404,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <300>;
         };
 
         parR_grR: parR_grR {
@@ -413,7 +413,7 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <300>;
         };
 
         min_pl_eq: min_pl_eq {
@@ -422,7 +422,7 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp PLUS>, <&kp KP_EQUAL>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <300>;
         };
 
         sem_L4: sem_L4 {
