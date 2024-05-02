@@ -26,33 +26,226 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        cmb_escape {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+        };
+
+        cmb_tab {
+            bindings = <&kp TAB>;
+            key-positions = <4 5>;
+        };
+
+        cmb_leftjumpword {
+            bindings = <&none>;
+            key-positions = <16 15>;
+        };
+
+        cmb_rightjumpword {
+            bindings = <&none>;
+            key-positions = <19 20>;
+        };
+
+        cmb_uparrow {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <6 7>;
+        };
+
+        cmb_downarrow {
+            bindings = <&kp DOWN>;
+            key-positions = <30 31>;
+        };
+
+        cmb_CT_AL_DEL {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <26 25 27 28>;
+        };
+
+        cmb_lock_kbd {
+            bindings = <&kp LG(L)>;
+            key-positions = <32 31 33 34>;
+        };
+
+        cmb_word_bspc {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <14 15 16>;
+        };
+
+        cmb_word_del {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <19 20 21>;
+        };
+
+        cmb_word_sel_left {
+            bindings = <&kp LC(LS(LEFT))>;
+            key-positions = <13 14 15 16>;
+        };
+
+        cmb_word_sel_right {
+            bindings = <&kp LC(LS(RIGHT))>;
+            key-positions = <19 20 21 22>;
+        };
+
+        cmb_rclick_word {
+            bindings = <&kp LS(F10)>;
+            key-positions = <21 22>;
+        };
+
+        cmb_ctrl_z {
+            bindings = <&kp LC(Z)>;
+            key-positions = <25 26>;
+        };
+
+        cmb_show_open_apps {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <1 2 3 4>;
+        };
+
+        cmb_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <17 5>;
+        };
+
+        cmb_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <16 4>;
+        };
+
+        cmb_cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <15 3>;
+        };
+
+        cmb_tog_L0 {
+            bindings = <&tog 0>;
+            key-positions = <38 39>;
+            layers = <0 1 2>;
+        };
+
+        cmb_left_arrow {
+            bindings = <&kp LEFT>;
+            key-positions = <16 17>;
+        };
+
+        cmb_right_arrow {
+            bindings = <&kp RIGHT>;
+            key-positions = <18 19>;
+        };
+    };
+
+    behaviors {
+        spdel_SyNu: spdel_SyNu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPDEL_SYNU";
+            bindings = <&lt 1 SPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+        };
+
+        bsdel_SyNu: bsdel_SyNu {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSDEL_SYNU";
+            bindings = <&lt 1 BSPC>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+        };
+
+        spdel_Ar: spdel_Ar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPDEL_AR";
+            bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+        };
+
+        bsdel_Ar: bsdel_Ar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSDEL_AR";
+            bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+        };
+
+        direc: direc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DIREC";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RALT|MOD_RCTL)>;
+        };
+
+        paren: paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PAREN";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        bracket: bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKET";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        brace: brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACE";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        slashes: slashes {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SLASHES";
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         qwerty {
             bindings = <
-&mt LALT RBKT    &kp Q  &kp W  &kp E        &kp R            &kp T        &kp Y        &kp U           &kp I        &kp O    &kp P     &mt RALT BACKSLASH
-&mt LSHFT GRAVE  &kp A  &kp S  &kp D        &kp F            &kp G        &kp H        &kp J           &kp K        &kp L    &kp SEMI  &mt RSHFT SQT
-&mt LCTRL MINUS  &kp Z  &kp X  &kp C        &kp V            &kp B        &kp N        &kp M           &kp COMMA    &kp DOT  &kp FSLH  &mt RCTRL RETURN
-                               &lt RSE TAB  &mt LSHFT SPACE  &lt LWR RET  &lt LWR ESC  &mt RSHFT BSPC  &lt RSE DEL
+&mt LALT RBKT    &kp Q  &kp W  &kp E        &kp R      &kp T        &kp Y        &kp U      &kp I        &kp O    &kp P     &mt RALT BACKSLASH
+&mt LSHFT GRAVE  &kp A  &kp S  &kp D        &kp F      &kp G        &kp H        &kp J      &kp K        &kp L    &kp SEMI  &mt RSHFT SQT
+&mt LCTRL MINUS  &kp Z  &kp X  &kp C        &kp V      &kp B        &kp N        &kp M      &kp COMMA    &kp DOT  &kp FSLH  &mt RCTRL RETURN
+                               &spdel_SyNu  &spdel_Ar  &bsdel_SyNu  &spdel_SyNu  &bsdel_Ar  &spdel_SyNu
             >;
         };
 
         symnum {
             bindings = <
-&mt LGUI F1     &kp F2    &kp F3  &kp F4       &kp F5    &kp F6     &kp F7     &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
-&mt LCTRL PLUS  &kp EXCL  &kp AT  &kp HASH     &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR     &kp LPAR  &kp RPAR  &mt RCTRL MINUS
-&mt LALT EQUAL  &kp N1    &kp N2  &kp N3       &kp N4    &kp N5     &kp N6     &kp N7    &kp N8       &kp N9    &kp N0    &kp RALT
-                                  &lt ADJ TAB  &trans    &trans     &trans     &trans    &lt ADJ DEL
+&tog 0           &direc       &paren     &bracket     &brace    &slashes   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_SLASH  &kp KP_MULTIPLY
+&mt LSHFT GRAVE  &kp EXCL     &kp AT     &kp HASH     &kp DLLR  &kp PRCNT  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD    &mt RCTRL MINUS
+&mt LCTRL EQUAL  &kp PERCENT  &kp CARET  &kp AMPS     &kp STAR  &kp MINUS  &kp PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0        &kp RETURN
+                                         &lt ADJ TAB  &trans    &trans     &trans     &trans        &lt ADJ DEL
             >;
         };
 
-        raise_layer {
+        arrow {
             bindings = <
-&mt LGUI KP_NUM  &kp KP_SLASH     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &kp C_VOL_UP  &kp HOME  &kp PSCRN  &kp PG_UP  &kp SLCK         &kp CLCK
-&mt LCTRL EQUAL  &kp KP_MULTIPLY  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp C_MUTE    &kp LEFT  &kp UP     &kp RIGHT  &kp INS          &mt RCTRL K_APP
-&kp LALT         &kp KP_N0        &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT    &kp C_VOL_DN  &kp END   &kp DOWN   &kp PG_DN  &kp PAUSE_BREAK  &kp RALT
-                                             &trans     &trans     &lt ADJ RET   &lt ADJ ESC   &trans    &trans
+&mt LGUI KP_NUM  &none       &none         &none         &none         &none         &kp C_VOL_UP  &kp HOME  &kp PSCRN  &kp PG_UP  &kp SLCK   &kp CLCK
+&mt LCTRL EQUAL  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp HOME      &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT  &kp END
+&none            &none       &none         &none         &none         &none         &kp C_VOL_DN  &kp END   &kp DOWN   &kp PG_DN  &none      &kp RALT
+                                           &trans        &trans        &lt ADJ RET   &lt ADJ ESC   &trans    &trans
             >;
         };
 
