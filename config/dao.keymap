@@ -40,33 +40,13 @@
         };
 
         cmb_leftjumpword {
-            bindings = <&none>;
+            bindings = <&LW_LL>;
             key-positions = <16 15>;
         };
 
         cmb_rightjumpword {
-            bindings = <&none>;
+            bindings = <&RW_RL>;
             key-positions = <19 20>;
-        };
-
-        cmb_uparrow {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <6 7>;
-        };
-
-        cmb_downarrow {
-            bindings = <&kp DOWN>;
-            key-positions = <30 31>;
-        };
-
-        cmb_CT_AL_DEL {
-            bindings = <&kp LC(LA(DELETE))>;
-            key-positions = <26 25 27 28>;
-        };
-
-        cmb_lock_kbd {
-            bindings = <&kp LG(L)>;
-            key-positions = <32 31 33 34>;
         };
 
         cmb_word_bspc {
@@ -91,32 +71,12 @@
 
         cmb_rclick_word {
             bindings = <&kp LS(F10)>;
-            key-positions = <21 22>;
+            key-positions = <13 14>;
         };
 
         cmb_ctrl_z {
             bindings = <&kp LC(Z)>;
             key-positions = <25 26>;
-        };
-
-        cmb_show_open_apps {
-            bindings = <&kp LG(TAB)>;
-            key-positions = <1 2 3 4>;
-        };
-
-        cmb_paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <17 5>;
-        };
-
-        cmb_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <16 4>;
-        };
-
-        cmb_cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <15 3>;
         };
 
         cmb_tog_L0 {
@@ -134,39 +94,94 @@
             bindings = <&kp RIGHT>;
             key-positions = <18 19>;
         };
+
+        cmb_up_arrow {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <6 7>;
+        };
+
+        cmb_dn_arrow {
+            bindings = <&kp DOWN>;
+            key-positions = <30 31>;
+        };
+
+        cmb_winkey {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <0 12>;
+        };
+
+        cmb_cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <2 14>;
+        };
+
+        cmb_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <3 15>;
+        };
+
+        cmb_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <4 16>;
+        };
+
+        cmb_CT_AL_DEL {
+            bindings = <&kp LC(LA(DELETE))>;
+            key-positions = <26 25 27 28>;
+        };
+
+        cmb_lock_kbd {
+            bindings = <&kp LG(L)>;
+            key-positions = <32 31 33 34>;
+        };
+
+        cmb_open_apps {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <1 2 3 4>;
+        };
+
+        cmb_lshift {
+            bindings = <&kp LSHFT>;
+            key-positions = <14 15>;
+        };
+
+        cmb_rshift {
+            bindings = <&kp RSHFT>;
+            key-positions = <21 20>;
+        };
     };
 
     behaviors {
-        spdel_SyNu: spdel_SyNu {
+        spd_SyN: spd_SyN {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPDEL_SYNU";
+            label = "SPD_SYN";
             bindings = <&lt 1 SPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        bsdel_SyNu: bsdel_SyNu {
+        bsd_SyN: bsd_SyN {
             compatible = "zmk,behavior-mod-morph";
-            label = "BSDEL_SYNU";
+            label = "BSD_SYN";
             bindings = <&lt 1 BSPC>, <&kp DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        spdel_Ar: spdel_Ar {
+        spd_Arr: spd_Arr {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPDEL_AR";
+            label = "SPD_ARR";
             bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        bsdel_Ar: bsdel_Ar {
+        bsd_Arr: bsd_Arr {
             compatible = "zmk,behavior-mod-morph";
-            label = "BSDEL_AR";
+            label = "BSD_ARR";
             bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -179,7 +194,7 @@
             bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RSFT|MOD_RALT|MOD_RCTL)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RALT|MOD_RCTL)>;
         };
 
         paren: paren {
@@ -188,7 +203,7 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
         };
 
         bracket: bracket {
@@ -197,7 +212,7 @@
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
         };
 
         brace: brace {
@@ -206,7 +221,7 @@
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
         };
 
         slashes: slashes {
@@ -215,7 +230,26 @@
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RSFT|MOD_RCTL|MOD_RALT)>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        LW_LL: LW_LL {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LW_LL";
+            bindings = <&kp LC(LEFT)>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_LCTL)>;
+        };
+
+        RW_RL: RW_RL {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RW_RL";
+            bindings = <&kp LC(RIGHT)>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
+            keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
     };
 
@@ -224,10 +258,10 @@
 
         qwerty {
             bindings = <
-&mt LALT RBKT    &kp Q  &kp W  &kp E        &kp R      &kp T        &kp Y        &kp U      &kp I        &kp O    &kp P     &mt RALT BACKSLASH
-&mt LSHFT GRAVE  &kp A  &kp S  &kp D        &kp F      &kp G        &kp H        &kp J      &kp K        &kp L    &kp SEMI  &mt RSHFT SQT
-&mt LCTRL MINUS  &kp Z  &kp X  &kp C        &kp V      &kp B        &kp N        &kp M      &kp COMMA    &kp DOT  &kp FSLH  &mt RCTRL RETURN
-                               &spdel_SyNu  &spdel_Ar  &bsdel_SyNu  &spdel_SyNu  &bsdel_Ar  &spdel_SyNu
+&mt LALT RBKT    &kp Q  &kp W  &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I      &kp O    &kp P     &mt RALT BACKSLASH
+&mt LSHFT GRAVE  &kp A  &kp S  &kp D     &kp F     &kp G     &kp H     &kp J     &kp K      &kp L    &kp SEMI  &mt RSHFT SQT
+&mt LCTRL MINUS  &kp Z  &kp X  &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH  &mt RCTRL RETURN
+                               &spd_SyN  &spd_Arr  &bsd_SyN  &spd_SyN  &bsd_Arr  &spd_SyN
             >;
         };
 
