@@ -107,7 +107,7 @@
 
         cmb_winkey {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <0 12>;
+            key-positions = <12 24>;
         };
 
         cmb_cut {
@@ -152,27 +152,27 @@
 
         cmb_exclaim {
             bindings = <&kp EXCL>;
-            key-positions = <1 13>;
+            key-positions = <0 12>;
         };
 
         cmb_atsym {
             bindings = <&kp AT>;
-            key-positions = <2 14>;
+            key-positions = <1 13>;
         };
 
         cmb_numsym {
-            bindings = <&kp HASH>;
-            key-positions = <3 15>;
+            bindings = <&kp STAR>;
+            key-positions = <2 14>;
         };
 
         cmb_dollar {
             bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
+            key-positions = <3 15>;
         };
 
         cmb_percent {
             bindings = <&kp PERCENT>;
-            key-positions = <5 17>;
+            key-positions = <4 16>;
         };
 
         cmb_caret {
@@ -209,10 +209,15 @@
             bindings = <&kp LC(V)>;
             key-positions = <19 21>;
         };
+
+        cmb_hash {
+            bindings = <&kp HASH>;
+            key-positions = <5 17>;
+        };
     };
 
     behaviors {
-        spd_SyN: spd_SyN {
+        spd_SYN: spd_SYN {
             compatible = "zmk,behavior-mod-morph";
             label = "SPD_SYN";
             bindings = <&lt 1 SPACE>, <&kp DELETE>;
@@ -221,7 +226,7 @@
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        bsd_SyN: bsd_SyN {
+        bsd_SYN: bsd_SYN {
             compatible = "zmk,behavior-mod-morph";
             label = "BSD_SYN";
             bindings = <&lt 1 BSPC>, <&kp DELETE>;
@@ -230,7 +235,7 @@
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        spd_Arr: spd_Arr {
+        spd_ARR: spd_ARR {
             compatible = "zmk,behavior-mod-morph";
             label = "SPD_ARR";
             bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
@@ -239,7 +244,7 @@
             mods = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
         };
 
-        bsd_Arr: bsd_Arr {
+        bsd_ARR: bsd_ARR {
             compatible = "zmk,behavior-mod-morph";
             label = "BSD_ARR";
             bindings = <&lt 2 BACKSPACE>, <&kp DELETE>;
@@ -287,7 +292,7 @@
         slashes: slashes {
             compatible = "zmk,behavior-mod-morph";
             label = "SLASHES";
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            bindings = <&kp LS(BACKSLASH)>, <&kp SLASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
@@ -311,6 +316,62 @@
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
             keep-mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
+
+        direc2: direc2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DIREC2";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LESS_THAN)>, <&kp GREATER_THAN>;
+        };
+
+        paren2: paren2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PAREN2";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+        };
+
+        brak2: brak2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRAK2";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+
+        brac2: brac2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRAC2";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
+
+        slashes2: slashes2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SLASHES2";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+        };
+
+        pqex: pqex {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PQEX";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp QUESTION>, <&kp EXCL>;
+        };
+
+        comapoquo: comapoquo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMAPOQUO";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp APOS>, <&kp DOUBLE_QUOTES>;
+        };
+
+        shft_word: shft_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHFT_WORD";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+        };
     };
 
     keymap {
@@ -318,28 +379,28 @@
 
         qwerty {
             bindings = <
-&mt LALT RBKT    &kp Q  &kp W  &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I      &kp O    &kp P     &mt RALT BACKSLASH
-&mt LSHFT GRAVE  &kp A  &kp S  &kp D     &kp F     &kp G     &kp H     &kp J     &kp K      &kp L    &kp SEMI  &mt RSHFT SQT
-&mt LCTRL MINUS  &kp Z  &kp X  &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA  &kp DOT  &kp FSLH  &mt RCTRL RETURN
-                               &spd_SyN  &spd_Arr  &bsd_SyN  &spd_SyN  &bsd_Arr  &spd_SyN
+&kp LEFT_ALT      &kp Q  &kp W  &kp E  &kp R     &kp T     &kp Y     &kp U     &kp I       &kp O  &kp P     &mt RALT BACKSLASH
+&shft_word        &kp A  &kp S  &kp D  &kp F     &kp G     &kp H     &kp J     &kp K       &kp L  &kp SEMI  &mt RSHFT SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V     &kp B     &kp N     &kp M     &comapoquo  &pqex  &kp FSLH  &mt RCTRL RETURN
+                                &none  &spd_ARR  &bsd_SYN  &spd_SYN  &bsd_ARR  &none
             >;
         };
 
         symnum {
             bindings = <
-&tog 0           &direc       &paren     &bracket     &brace    &slashes   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_SLASH  &kp KP_MULTIPLY
-&mt LSHFT GRAVE  &kp EXCL     &kp AT     &kp HASH     &kp DLLR  &kp PRCNT  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD    &mt RCTRL MINUS
-&mt LCTRL EQUAL  &kp PERCENT  &kp CARET  &kp AMPS     &kp STAR  &kp MINUS  &kp PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0        &kp RETURN
-                                         &lt ADJ TAB  &trans    &trans     &trans     &trans        &lt ADJ DEL
+&gresc     &direc2   &paren2   &brak2      &brac2       &slashes2  &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_ASTERISK  &none
+&kp EXCL   &kp AT    &kp STAR  &kp DOLLAR  &kp PERCENT  &kp HASH   &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD       &none
+&kp CARET  &kp AMPS  &none     &none       &none        &none      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0     &kp RETURN
+                               &none       &none        &none      &none      &none         &none
             >;
         };
 
         arrow {
             bindings = <
-&mt LGUI KP_NUM  &none       &none         &none         &none         &none         &kp C_VOL_UP  &kp HOME  &kp PSCRN  &kp PG_UP  &kp SLCK   &kp CLCK
-&mt LCTRL EQUAL  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp HOME      &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT  &kp END
-&none            &none       &none         &none         &none         &none         &kp C_VOL_DN  &kp END   &kp DOWN   &kp PG_DN  &none      &kp RALT
-                                           &trans        &trans        &lt ADJ RET   &lt ADJ ESC   &trans    &trans
+&mt LGUI KP_NUM  &none       &none         &none         &none         &none         &none     &kp PG_UP      &kp PSCRN  &none     &none      &none
+&none            &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &kp HOME  &kp LEFT       &kp UP     &kp DOWN  &kp RIGHT  &kp END
+&none            &none       &none         &none         &none         &none         &none     &kp PAGE_DOWN  &kp DOWN   &none     &none      &none
+                                           &none         &none         &none         &none     &none          &none
             >;
         };
 
