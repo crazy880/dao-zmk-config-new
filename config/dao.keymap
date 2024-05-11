@@ -322,6 +322,8 @@
             label = "DIREC2";
             #binding-cells = <0>;
             bindings = <&kp LS(LESS_THAN)>, <&kp GREATER_THAN>;
+
+            tapping-term-ms = <300>;
         };
 
         paren2: paren2 {
@@ -329,6 +331,8 @@
             label = "PAREN2";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            tapping-term-ms = <300>;
         };
 
         brak2: brak2 {
@@ -336,6 +340,8 @@
             label = "BRAK2";
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            tapping-term-ms = <300>;
         };
 
         brac2: brac2 {
@@ -343,6 +349,8 @@
             label = "BRAC2";
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            tapping-term-ms = <300>;
         };
 
         slashes2: slashes2 {
@@ -350,6 +358,8 @@
             label = "SLASHES2";
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
+
+            tapping-term-ms = <300>;
         };
 
         pqex: pqex {
@@ -357,6 +367,8 @@
             label = "PQEX";
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp QUESTION>, <&kp EXCL>;
+
+            tapping-term-ms = <300>;
         };
 
         comapoquo: comapoquo {
@@ -364,6 +376,8 @@
             label = "COMAPOQUO";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp APOS>, <&kp DOUBLE_QUOTES>;
+
+            tapping-term-ms = <300>;
         };
 
         shft_word: shft_word {
@@ -371,6 +385,8 @@
             label = "SHFT_WORD";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+
+            tapping-term-ms = <300>;
         };
     };
 
@@ -389,7 +405,7 @@
         symnum {
             bindings = <
 &gresc     &direc2   &paren2   &brak2      &brac2       &slashes2  &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_ASTERISK  &none
-&kp EXCL   &kp AT    &kp STAR  &kp DOLLAR  &kp PERCENT  &kp HASH   &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD       &none
+&kp EXCL   &kp AT    &kp STAR  &kp DOLLAR  &kp PERCENT  &kp HASH   &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD       &kp RSHFT
 &kp CARET  &kp AMPS  &none     &none       &none        &none      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0     &kp RETURN
                                &none       &none        &none      &none      &none         &none
             >;
