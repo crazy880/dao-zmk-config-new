@@ -384,7 +384,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHFT_WORD";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+            bindings = <&sk LSHFT>, <&caps_word>;
 
             tapping-term-ms = <300>;
         };
