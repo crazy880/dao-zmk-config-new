@@ -189,6 +189,11 @@
             bindings = <&kp LEFT_COMMAND>;
             key-positions = <14 26>;
         };
+
+        cmb_pssw {
+            bindings = <&pssw>;
+            key-positions = <7 8 9 10>;
+        };
     };
 
     behaviors {
@@ -412,6 +417,23 @@
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp BACKSLASH>, <&kp PIPE>;
+        };
+    };
+
+    macros {
+        mcr_word_left: mcr_word_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>, <&macro_press>, <&LW_LL>, <&macro_press>;
+
+            label = "MCR_WORD_LEFT";
+        };
+
+        pssw: pssw {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp F &kp V &kp U &kp J &kp M &kp LS(A) &kp N9>;
+            label = "PSSW";
         };
     };
 
