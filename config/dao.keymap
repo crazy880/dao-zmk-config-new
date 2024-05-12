@@ -446,7 +446,7 @@
         pssw: pssw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp R &kp F &kp V &kp U &kp J &kp M &kp LS(A) &kp N9>;
+            bindings = <&kp R &kp F &kp V &kp U &kp J &kp M &kp LS(A) &kp NUMBER_1>;
             label = "PSSW";
         };
 
