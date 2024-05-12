@@ -194,6 +194,21 @@
             bindings = <&pssw>;
             key-positions = <7 8 9 10>;
         };
+
+        cmd_LW3 {
+            bindings = <&mcr_word_left_3>;
+            key-positions = <13 14 33>;
+        };
+
+        cmb_LW6 {
+            bindings = <&mcr_word_left_3>;
+            key-positions = <13 14 21>;
+        };
+
+        cmb_LW9 {
+            bindings = <&mcr_word_left_3>;
+            key-positions = <13 14 9>;
+        };
     };
 
     behaviors {
@@ -421,11 +436,10 @@
     };
 
     macros {
-        mcr_word_left: mcr_word_left {
+        mcr_word_left_3: mcr_word_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>, <&macro_press>, <&LW_LL>, <&macro_press>;
-
+            bindings = <&LW_LL &LW_LL &LW_LL>;
             label = "MCR_WORD_LEFT";
         };
 
@@ -434,6 +448,20 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp F &kp V &kp U &kp J &kp M &kp LS(A) &kp N9>;
             label = "PSSW";
+        };
+
+        mcr_LW6: mcr_LW6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
+            label = "MCR_LW6";
+        };
+
+        mcr_LW9: mcr_LW9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
+            label = "MCR_LW9";
         };
     };
 
