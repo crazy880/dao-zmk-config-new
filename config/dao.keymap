@@ -51,7 +51,7 @@
 
         cmb_word_bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <14 15 13 16>;
+            key-positions = <16 15 14 13>;
         };
 
         cmb_word_del {
@@ -71,7 +71,7 @@
 
         cmb_rclick_word {
             bindings = <&kp LS(F10)>;
-            key-positions = <13 16>;
+            key-positions = <22 23>;
         };
 
         cmb_ctrl_z {
@@ -103,11 +103,6 @@
         cmb_dn_arrow {
             bindings = <&kp DOWN>;
             key-positions = <31 32>;
-        };
-
-        cmb_winkey {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <2 14>;
         };
 
         cmb_cut {
@@ -165,14 +160,9 @@
             key-positions = <4 16>;
         };
 
-        cmb_backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <11 23>;
-        };
-
         cmb_alt {
             bindings = <&kp LEFT_ALT>;
-            key-positions = <13 25>;
+            key-positions = <13 25 13 25>;
         };
 
         cmb_ctrl {
@@ -182,7 +172,7 @@
 
         cmb_win {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <2 14>;
+            key-positions = <14 14 14 14 2>;
         };
 
         cmb_apple {
@@ -197,17 +187,17 @@
 
         cmd_LW3 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <13 14 33>;
+            key-positions = <33 26>;
         };
 
         cmb_LW6 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <13 14 21>;
+            key-positions = <14 21>;
         };
 
         cmb_LW9 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <13 14 9>;
+            key-positions = <9 2>;
         };
     };
 
