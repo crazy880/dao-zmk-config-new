@@ -112,7 +112,7 @@
 
         cmb_cut {
             bindings = <&kp LC(X)>;
-            key-positions = <25 26>;
+            key-positions = <25 26 27>;
         };
 
         cmb_copy {
@@ -170,11 +170,6 @@
             key-positions = <11 23>;
         };
 
-        cmb_apple {
-            bindings = <&kp LEFT_COMMAND>;
-            key-positions = <14 26>;
-        };
-
         cmb_alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <13 25>;
@@ -188,6 +183,11 @@
         cmb_win {
             bindings = <&kp LEFT_GUI>;
             key-positions = <2 14>;
+        };
+
+        cmb_apple {
+            bindings = <&kp LEFT_COMMAND>;
+            key-positions = <14 26>;
         };
     };
 
