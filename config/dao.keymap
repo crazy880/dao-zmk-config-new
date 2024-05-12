@@ -187,17 +187,17 @@
 
         cmd_LW3 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <33 26>;
+            key-positions = <25 28>;
         };
 
         cmb_LW6 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <14 21>;
+            key-positions = <13 16>;
         };
 
         cmb_LW9 {
             bindings = <&mcr_word_left_3>;
-            key-positions = <9 2>;
+            key-positions = <1 4>;
         };
     };
 
