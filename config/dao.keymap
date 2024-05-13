@@ -171,12 +171,12 @@
         };
 
         cmb_win {
-            bindings = <&kp LGUI>;
+            bindings = <&kp LWIN>;
             key-positions = <14 14 14 14 2>;
         };
 
         cmb_apple {
-            bindings = <&kp LEFT_COMMAND>;
+            bindings = <&kp LCMD>;
             key-positions = <14 26>;
         };
 
