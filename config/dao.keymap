@@ -51,7 +51,7 @@
 
         cmb_word_bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <16 15 14 13>;
+            key-positions = <12 13>;
         };
 
         cmb_word_del {
@@ -171,7 +171,7 @@
         };
 
         cmb_win {
-            bindings = <&kp LEFT_GUI>;
+            bindings = <&kp LGUI>;
             key-positions = <14 14 14 14 2>;
         };
 
