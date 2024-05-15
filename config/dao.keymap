@@ -42,11 +42,13 @@
         cmb_leftjumpword {
             bindings = <&LW_LL>;
             key-positions = <14 13>;
+            require-prior-idle-ms = <100>;
         };
 
         cmb_rightjumpword {
             bindings = <&RW_RL>;
             key-positions = <22 21>;
+            require-prior-idle-ms = <100>;
         };
 
         cmb_word_bspc {
@@ -62,11 +64,13 @@
         cmb_word_sel_left {
             bindings = <&kp LC(LS(LEFT))>;
             key-positions = <13 14 15>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_word_sel_right {
             bindings = <&kp LC(LS(RIGHT))>;
             key-positions = <20 21 22>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_rclick_word {
@@ -88,21 +92,25 @@
         cmb_left_arrow {
             bindings = <&kp LEFT>;
             key-positions = <16 15>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_right_arrow {
             bindings = <&kp RIGHT>;
             key-positions = <19 20>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_up_arrow {
             bindings = <&kp UP_ARROW>;
             key-positions = <3 4>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_dn_arrow {
             bindings = <&kp DOWN>;
             key-positions = <31 32>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_cut {
@@ -136,12 +144,13 @@
         };
 
         cmb_lshift {
-            bindings = <&kp LSHFT>;
+            bindings = <&shft_word>;
             key-positions = <14 15>;
+            require-prior-idle-ms = <100>;
         };
 
         cmb_rshift {
-            bindings = <&kp RSHFT>;
+            bindings = <&shft_word>;
             key-positions = <21 20>;
         };
 
@@ -469,9 +478,9 @@
 
         symnum {
             bindings = <
-&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_ASTERISK  &none
-&kp LSHFT  &at_amp    &str_semi         &kp DOLLAR         &pnd_perc  &s_d_quote  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD       &kp RSHFT
-&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH        &kp RETURN
+&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp SLASH   &kp KP_MULTIPLY
+&kp LSHFT  &at_amp    &str_semi         &kp DOLLAR         &pnd_perc  &s_d_quote  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD  &kp RSHFT
+&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0      &kp RETURN
                                         &none              &none      &none       &none      &none         &none
             >;
         };
