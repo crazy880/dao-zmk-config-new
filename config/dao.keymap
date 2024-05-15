@@ -53,7 +53,7 @@
 
         cmb_word_bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <15 16 14 13>;
+            key-positions = <13 12>;
         };
 
         cmb_word_del {
@@ -146,12 +146,13 @@
         cmb_lshift {
             bindings = <&shft_word>;
             key-positions = <14 15>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_rshift {
             bindings = <&shft_word>;
             key-positions = <21 20>;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_atsym {
@@ -172,11 +173,15 @@
         cmb_alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <13 25 13 25>;
+            slow-release;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_ctrl {
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <15 27>;
+            slow-release;
+            require-prior-idle-ms = <200>;
         };
 
         cmb_win {
@@ -207,6 +212,11 @@
         cmb_LW9 {
             bindings = <&mcr_word_left_3>;
             key-positions = <1 4>;
+        };
+
+        cmb_word_bs {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <13 16 15 14>;
         };
     };
 
