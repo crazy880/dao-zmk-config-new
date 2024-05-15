@@ -53,7 +53,7 @@
 
         cmb_word_bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <12 13>;
+            key-positions = <15 16 14 13>;
         };
 
         cmb_word_del {
