@@ -442,6 +442,22 @@
             tapping-term-ms = <300>;
             bindings = <&kp BACKSLASH>, <&kp PIPE>;
         };
+
+        num_word: num_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUM_WORD";
+            #binding-cells = <0>;
+            continue-list = <N1 N2 N4 N5 N6 N7 N8 N9 N0 N3 STAR BSPC SPACE MINUS PLUS EQUAL UNDERSCORE BSLH COLON COMMA DOT PERIOD SLASH FSLH DEL>;
+        };
+
+        dollar_colon: dollar_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOLLAR_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp DOLLAR>, <&kp COLON>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     macros {
@@ -472,6 +488,20 @@
             bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
             label = "MCR_LW9";
         };
+
+        mcr_LW7: mcr_word_left_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
+            label = "MCR_WORD_LEFT_7";
+        };
+
+        mcr_LW4: cmr_left_word_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL>;
+            label = "CMR_LEFT_WORD_4";
+        };
     };
 
     keymap {
@@ -482,15 +512,15 @@
 &kp LEFT_ALT      &kp Q  &kp W  &kp E    &kp R     &kp T     &kp Y     &kp U     &kp I       &kp O  &kp P     &mt RALT BACKSLASH
 &shft_word        &kp A  &kp S  &kp D    &kp F     &kp G     &kp H     &kp J     &kp K       &kp L  &kp SEMI  &mt RSHFT SQT
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V     &kp B     &kp N     &kp M     &comapoquo  &pqex  &kp FSLH  &mt RCTRL RETURN
-                                &lt 3 A  &spd_ARR  &bsd_SYN  &spd_SYN  &bsd_ARR  &none
+                                &lt 3 A  &spd_ARR  &bsd_SYN  &spd_SYN  &bsd_ARR  &num_word
             >;
         };
 
         symnum {
             bindings = <
-&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp SLASH   &kp KP_MULTIPLY
-&kp LSHFT  &at_amp    &str_semi         &kp DOLLAR         &pnd_perc  &s_d_quote  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD  &kp RSHFT
-&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe    &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0      &kp RETURN
+&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE  &kp KP_MULTIPLY
+&kp LSHFT  &at_amp    &str_semi         &dollar_colon      &pnd_perc  &s_d_quote  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD     &kp RSHFT
+&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe    &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0         &kp RETURN
                                         &none              &none      &none       &none      &none         &none
             >;
         };
