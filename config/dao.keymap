@@ -94,13 +94,13 @@
         cmb_left_arrow {
             bindings = <&kp LEFT>;
             key-positions = <16 15>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <600>;
         };
 
         cmb_right_arrow {
             bindings = <&kp RIGHT>;
             key-positions = <19 20>;
-            require-prior-idle-ms = <400>;
+            require-prior-idle-ms = <600>;
         };
 
         cmb_up_arrow {
@@ -112,7 +112,7 @@
         cmb_dn_arrow {
             bindings = <&kp DOWN>;
             key-positions = <31 32>;
-            require-prior-idle-ms = <400>;
+            require-prior-idle-ms = <600>;
         };
 
         cmb_cut {
@@ -173,26 +173,26 @@
         };
 
         cmb_alt {
-            bindings = <&kp LEFT_ALT>;
+            bindings = <&sk LALT>;
             key-positions = <13 25 13 25>;
             slow-release;
             require-prior-idle-ms = <200>;
         };
 
         cmb_ctrl {
-            bindings = <&kp LEFT_CONTROL>;
+            bindings = <&sk LCTRL>;
             key-positions = <15 27>;
             slow-release;
             require-prior-idle-ms = <200>;
         };
 
         cmb_win {
-            bindings = <&kp LWIN>;
+            bindings = <&sk LEFT_WIN>;
             key-positions = <14 14 14 14 2>;
         };
 
         cmb_apple {
-            bindings = <&kp LCMD>;
+            bindings = <&sk LEFT_COMMAND>;
             key-positions = <14 26>;
         };
 
