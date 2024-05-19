@@ -41,7 +41,7 @@
         };
 
         cmb_leftjumpword {
-            bindings = <&LW_LL>;
+            bindings = <&to 4>;
             key-positions = <14 13>;
             require-prior-idle-ms = <100>;
             slow-release;
@@ -565,7 +565,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "LA_LC";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_ARROW)>, <&kp LEFT>;
+            bindings = <&kp LC(LEFT_ARROW)>;
         };
     };
 
@@ -587,7 +587,11 @@
         mcr_LW6: mcr_LW6 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
+            bindings =
+                <&macro_press>,
+                <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>,
+                <&macro_release>;
+
             label = "MCR_LW6";
         };
 
@@ -704,6 +708,15 @@
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
 &sys_reset   &none         &none         &none         &none         &none           &none         &none         &none         &none         &none         &sys_reset
                                          &trans        &none         &trans          &trans        &none         &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
