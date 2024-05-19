@@ -484,6 +484,78 @@
 
             tapping-term-ms = <300>;
         };
+
+        J_4LW: J_4LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "J_4LW";
+            bindings = <&kp J>, <&mcr_LW4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_RALT)>;
+        };
+
+        K_5LW: K_5LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "K_5LW";
+            bindings = <&kp K>, <&mcr_LW5>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        L_6LW: L_6LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "L_6LW";
+            bindings = <&kp L>, <&mcr_LW6>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        comma_2LW: comma_2LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_2LW";
+            bindings = <&comapoquo>, <&comma_2LW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        period_3LW: period_3LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PERIOD_3LW";
+            bindings = <&pqex>, <&mcr_LW3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        U_7LW: U_7LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "U_7LW";
+            bindings = <&kp U>, <&mcr_LW7>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        I_8LW: I_8LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "I_8LW";
+            bindings = <&kp I>, <&mcr_LW8>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
+
+        O_9LW: O_9LW {
+            compatible = "zmk,behavior-mod-morph";
+            label = "O_9LW";
+            bindings = <&kp I>, <&mcr_LW9>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+        };
     };
 
     macros {
@@ -575,6 +647,13 @@
             #binding-cells = <0>;
             bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
             label = "MCR_LW8";
+        };
+
+        mcr_LW2: mcr_2LW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LW_LL &LW_LL>;
+            label = "MCR_2LW";
         };
     };
 
