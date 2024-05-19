@@ -551,6 +551,22 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
         };
+
+        LW_LL_original: LW_LL_original {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LW_LL_ORIGINAL";
+            bindings = <&kp LC(LEFT)>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_LCTL)>;
+        };
+
+        LA_LC: LA_LC {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LA_LC";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_ARROW)>, <&kp LEFT>;
+        };
     };
 
     macros {
@@ -571,7 +587,7 @@
         mcr_LW6: mcr_LW6 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
             label = "MCR_LW6";
         };
 
@@ -592,7 +608,7 @@
         mcr_LW4: cmr_left_word_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC>;
             label = "CMR_LEFT_WORD_4";
         };
 
@@ -633,7 +649,7 @@
         mcr_LW5: mcr_LW5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LW_LL &LW_LL &LW_LL &LW_LL &LW_LL>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
             label = "MCR_LW5";
         };
 
