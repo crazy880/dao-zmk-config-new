@@ -48,7 +48,7 @@
         };
 
         cmb_rightjumpword {
-            bindings = <&RW_RL>;
+            bindings = <&lt 4 RC(RIGHT_ARROW)>;
             key-positions = <22 21>;
             require-prior-idle-ms = <100>;
         };
@@ -85,8 +85,8 @@
             key-positions = <25 26>;
         };
 
-        cmb_tog_L0 {
-            bindings = <&tog 0>;
+        cmb_ctl_z {
+            bindings = <&kp LC(Z)>;
             key-positions = <38 39>;
             layers = <0 1 2>;
         };
@@ -105,7 +105,7 @@
 
         cmb_up_arrow {
             bindings = <&kp UP_ARROW>;
-            key-positions = <3 4>;
+            key-positions = <7 8>;
             require-prior-idle-ms = <600>;
         };
 
@@ -201,43 +201,88 @@
             key-positions = <7 8 9 10>;
         };
 
-        cmd_LW3 {
+        cmb_esc {
+            bindings = <&kp ESC>;
+            key-positions = <37 40>;
+            layers = <0 1 2>;
+        };
+
+        cmb_LW3 {
             bindings = <&mcr_LW3>;
-            key-positions = <25 28>;
-        };
-
-        cmb_LW6 {
-            bindings = <&mcr_LW6>;
-            key-positions = <13 16>;
-        };
-
-        cmb_LW9 {
-            bindings = <&mcr_LW9>;
-            key-positions = <1 4>;
-        };
-
-        cmb_LW7 {
-            bindings = <&mcr_LW7>;
-            key-positions = <1 4 3>;
+            key-positions = <33 3 2>;
         };
 
         cmb_LW4 {
             bindings = <&mcr_LW4>;
-            key-positions = <25 27 28>;
+            key-positions = <19 3 2>;
         };
 
         cmb_LW5 {
             bindings = <&mcr_LW5>;
-            key-positions = <14 13 20>;
+            key-positions = <20 3 2>;
             slow-release;
             require-prior-idle-ms = <100>;
         };
 
+        cmb_LW6 {
+            bindings = <&mcr_LW6>;
+            key-positions = <3 21 2>;
+        };
+
+        cmb_LW7 {
+            bindings = <&mcr_LW7>;
+            key-positions = <3 7 2>;
+        };
+
         cmb_LW8 {
             bindings = <&mcr_LW8>;
-            key-positions = <14 13 8>;
+            key-positions = <8 3 2>;
             slow-release;
             require-prior-idle-ms = <100>;
+        };
+
+        cmb_LW9 {
+            bindings = <&mcr_LW9>;
+            key-positions = <3 9 2>;
+        };
+
+        cmb_RW3 {
+            bindings = <&mcr_RW3>;
+            key-positions = <33 3 4>;
+        };
+
+        cmb_RW4 {
+            bindings = <&mcr_RW4>;
+            key-positions = <19 3 4>;
+        };
+
+        cmb_RW5 {
+            bindings = <&mcr_RW5>;
+            key-positions = <20 3 4>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
+
+        cmb_RW6 {
+            bindings = <&mcr_RW6>;
+            key-positions = <3 21 4>;
+        };
+
+        cmb_RW7 {
+            bindings = <&mcr_RW7>;
+            key-positions = <3 7 4>;
+        };
+
+        cmb_RW8 {
+            bindings = <&mcr_RW8>;
+            key-positions = <8 3 4>;
+            slow-release;
+            require-prior-idle-ms = <100>;
+        };
+
+        cmb_RW9 {
+            bindings = <&mcr_RW9>;
+            key-positions = <3 9 4>;
         };
     };
 
@@ -276,60 +321,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
-        };
-
-        direc: direc {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DIREC";
-            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_RALT|MOD_RCTL)>;
-        };
-
-        paren: paren {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PAREN";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
-        };
-
-        bracket: bracket {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BRACKET";
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
-        };
-
-        brace: brace {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BRACE";
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
-        };
-
-        slashes: slashes {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SLASHES";
-            bindings = <&kp LS(BACKSLASH)>, <&kp SLASH>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
-        };
-
-        LW_LL: LW_LL {
-            compatible = "zmk,behavior-mod-morph";
-            label = "LW_LL";
-            bindings = <&kp LC(LEFT)>, <&kp LEFT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_LCTL)>;
         };
 
         RW_RL: RW_RL {
@@ -448,9 +439,9 @@
             tapping-term-ms = <300>;
         };
 
-        s_d_quote: s_d_quote {
+        sdquote: sdquote {
             compatible = "zmk,behavior-tap-dance";
-            label = "S_D_QUOTE";
+            label = "SDQUOTE";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
@@ -558,49 +549,21 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LEFT_ARROW)>;
         };
+
+        RA_RC: RA_RC {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RA_RC";
+            #binding-cells = <0>;
+            bindings = <&kp RC(RIGHT_ARROW)>;
+        };
     };
 
     macros {
-        mcr_LW3: mcr_LW3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC>;
-            label = "MCR_LW3";
-        };
-
         pssw: pssw {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp R &kp F &kp V &kp U &kp J &kp M &kp LS(A) &kp NUMBER_1>;
             label = "PSSW";
-        };
-
-        mcr_LW6: mcr_LW6 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
-            label = "MCR_LW6";
-        };
-
-        mcr_LW9: mcr_LW9 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
-            label = "MCR_LW9";
-        };
-
-        mcr_LW7: mcr_LW7 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
-            label = "MCR_LW7";
-        };
-
-        mcr_LW4: cmr_LW4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC>;
-            label = "CMR_LW4";
         };
 
         rgblayer: rgblayer {
@@ -637,11 +600,46 @@
             label = "RGBLAYER_PARAM";
         };
 
+        mcr_LW2: mcr_LW2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LA_LC &LA_LC>;
+            label = "MCR_LW2";
+        };
+
+        mcr_LW3: mcr_LW3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LA_LC &LA_LC &LA_LC>;
+            label = "MCR_LW3";
+        };
+
+        mcr_LW4: mcr_LW4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC>;
+            label = "MCR_LW4";
+        };
+
         mcr_LW5: mcr_LW5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
             label = "MCR_LW5";
+        };
+
+        mcr_LW6: mcr_LW6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
+            label = "MCR_LW6";
+        };
+
+        mcr_LW7: mcr_LW7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
+            label = "MCR_LW7";
         };
 
         mcr_LW8: mcr_LW8 {
@@ -651,18 +649,67 @@
             label = "MCR_LW8";
         };
 
-        mcr_LW2: mcr_LW2 {
+        mcr_LW9: mcr_LW9 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LA_LC &LA_LC>;
-            label = "MCR_LW2";
+            bindings = <&LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC &LA_LC>;
+            label = "MCR_LW9";
         };
 
-        mcr_LW1: mcr_LW1 {
+        mcr_RW2: mcr_RW2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&LA_LC>;
-            label = "MCR_LW1";
+            bindings = <&RA_RC &RA_RC>;
+            label = "MCR_RW2";
+        };
+
+        mcr_RW3: mcr_RW3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW3";
+        };
+
+        mcr_RW4: mcr_RW4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW4";
+        };
+
+        mcr_RW5: mcr_RW5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW5";
+        };
+
+        mcr_RW6: mcr_RW6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW6";
+        };
+
+        mcr_RW7: mcr_RW7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW7";
+        };
+
+        mcr_RW8: mcr_RW8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW8";
+        };
+
+        mcr_RW9: mcr_RW9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC &RA_RC>;
+            label = "MCR_RW9";
         };
     };
 
@@ -671,19 +718,19 @@
 
         qwerty {
             bindings = <
-&kp LEFT_ALT      &kp Q  &kp W  &kp E    &kp R     &kp T     &kp Y     &kp U     &kp I       &kp O   &kp P     &mt RALT BACKSLASH
-&shft_word        &kp A  &kp S  &kp D    &kp F     &kp G     &kp H     &J_4LW    &K_5LW      &L_6LW  &kp SEMI  &mt RSHFT SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V     &kp B     &kp N     &kp M     &comapoquo  &pqex   &kp FSLH  &mt RCTRL RETURN
+&kp LEFT_ALT      &kp Q  &kp W  &kp E    &kp R     &kp T     &kp Y     &kp U     &kp I       &kp O  &kp P     &mt RALT BACKSLASH
+&shft_word        &kp A  &kp S  &kp D    &kp F     &kp G     &kp H     &kp J     &kp K       &kp L  &kp SEMI  &mt RSHFT SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C    &kp V     &kp B     &kp N     &kp M     &comapoquo  &pqex  &kp FSLH  &mt RCTRL RETURN
                                 &lt 3 A  &spd_ARR  &bsd_SYN  &spd_SYN  &bsd_ARR  &num_word
             >;
         };
 
         symnum {
             bindings = <
-&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2   &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE  &kp KP_MULTIPLY
-&kp LSHFT  &at_amp    &str_semi         &dollar_colon      &pnd_perc  &s_d_quote  &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD     &kp RSHFT
-&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe    &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0         &kp RETURN
-                                        &none              &none      &none       &none      &none         &none
+&gresc     &direc2    &paren2           &brak2             &brac2     &slashes2  &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp KP_DIVIDE  &kp KP_MULTIPLY
+&kp LSHFT  &at_amp    &str_semi         &dollar_colon      &pnd_perc  &sdquote   &kp MINUS  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PERIOD     &kp RSHFT
+&none      &exc_pipe  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET  &bs_pipe   &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0         &kp RETURN
+                                        &none              &none      &none      &none      &none         &none
             >;
         };
 
@@ -707,10 +754,10 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mcr_LW7  &mcr_LW8  &mcr_LW9  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mcr_LW4  &mcr_LW5  &mcr_LW6  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mcr_LW1  &mcr_LW2  &mcr_LW3  &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans    &trans
+&trans  &trans  &mcr_RW9  &mcr_RW8  &mcr_RW7  &trans  &kp PG_UP  &mcr_LW7  &mcr_LW8  &mcr_LW9  &trans   &trans
+&trans  &trans  &mcr_RW6  &mcr_RW5  &mcr_RW4  &trans  &kp HOME   &mcr_LW4  &mcr_LW5  &mcr_LW6  &kp END  &kp END
+&trans  &trans  &mcr_RW3  &mcr_RW2  &trans    &trans  &kp PG_DN  &trans    &mcr_LW2  &mcr_LW3  &trans   &trans
+                          &trans    &trans    &trans  &trans     &trans    &trans
             >;
         };
     };
